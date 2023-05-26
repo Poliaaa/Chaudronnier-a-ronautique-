@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chaudronnerie Aéronautique</title>
+  <style>
+    /* Styles CSS pour les onglets */
+    .tab {
+      overflow: hidden;
+      background-color: #f1f1f1;
+    }
+    
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+    
+    .tab button:hover {
+      background-color: #ddd;
+    }
+    
+    .tab button.active {
+      background-color: #ccc;
+    }
+    
+    /* Styles CSS pour le contenu des onglets */
+    .tabcontent {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Chaudronnerie Aéronautique</h1>
+  
+  <!-- Onglets -->
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'accueil')">Accueil</button>
+    <button class="tablinks" onclick="openTab(event, 'info')">Informations</button>
+    <button class="tablinks" onclick="openTab(event, 'actualite')">Actualités</button>
+    <button class="tablinks" onclick="openTab(event, 'equipement')">Équipement</button>
+  </div>
+  
+  <!-- Contenu des onglets -->
+  <div id="accueil" class="tabcontent">
+    <h2>Accueil</h2>
+    <p>Bienvenue sur notre site de chaudronnerie aéronautique.</p>
+    <img src="accueil.jpg" alt="Image Accueil">
+  </div>
+  
+  <div id="info" class="tabcontent">
+    <h2>Informations</h2>
+    <p>Informations sur notre entreprise et nos services.</p>
+    <img src="info.jpg" alt="Image Informations">
+  </div>
+  
+  <div id="actualite" class="tabcontent">
+    <h2>Actualités</h2>
+    <p>Dernières actualités et événements de la chaudronnerie aéronautique.</p>
+    <img src="actualite.jpg" alt="Image Actualités">
+  </div>
+  
+  <div id="equipement" class="tabcontent">
+    <h2>Équipement</h2>
+    <p>Informations sur notre équipement et nos technologies.</p>
+    <img src="equipement.jpg" alt="Image Équipement">
+  </div>
+  
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+ 
